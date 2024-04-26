@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FRUIT'S WORLD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+  background: url('book.png') no-repeat center center fixed; 
+            /* replace 'path_to_your_image.jpg' with the path to your image */
+            background-size: cover;
+            backdrop-filter: blur(8px); /* Adjust the blur radius as needed */
+            -webkit-backdrop-filter: blur(8px); /* For Safari */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(128, 0, 128, 0.8);
+            /* Adjust the opacity as needed */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #800080;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Order Books</h1>
+    </header>
+    <div class="navbar">
+        <a href="home.html">HOME</a>
+        <a href="Books.html">BOOKS</a>
+        <a href="login.html">LOGOUT</a>
+    </div>
+
+    <div class="container">
+        <form action="/order" method="POST">
+            <input type="text" name="customerName" placeholder="Customer Name" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <label for="books">Select a Book:</label>
+            <select name="books" id="books" onchange="calculateTotal()">
+                <option value="The Little Prince" data-price="10">The Little Prince</option>
+                <option value="Jurassic Park" data-price="15">Jurassic Park</option>
+                <option value="Attack on Titan Manga" data-price="20">Attack on Titan Manga</option>
+                <option value="Harry Potter series" data-price="25">Harry Potter series</option>
+                <option value="The Godfather" data-price="30">The Godfather</option>
+                <option value="1984" data-price="12">1984</option>
+            </select>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" value="1" min="1" onchange="calculateTotal()">
+            <label for="totalPrice">Total Price:</label>
+            <input type="text" name="totalPrice" id="totalPrice" readonly>
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+    <script>
+        function calculateTotal() {
+            let quantity = document.getElementById('quantity').value;
+            let books = document.getElementById('books');
+            let price = parseInt(books.options[books.selectedIndex].getAttribute('data-price'));
+
+            let totalPrice = price * quantity;
+            document.getElementById('totalPrice').value = `$ ${totalPrice}`;
+        }
+
+        // Call the function on page load to set the initial price
+        calculateTotal();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Record</title>
+    <style>
+        body,
+        html {
+            margin: 2%;
+            height: 80%;
+            background-image: url('.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #AA336A;
+            font-family: 'Broadway', cursive;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 300px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #AA336A;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #993366;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>UPDATE DETAILS</h2>
+    <form action="/update" method="POST">
+        <table>
+            <tr>
+                <th>Username</th>
+                <td><input type="text" placeholder="Enter your username" name="username"></td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td><input type="text" placeholder="Enter your city" name="city"></td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td><input type="text" placeholder="Enter your phone number" name="phonenumber"></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input type="password" placeholder="Enter your password" name="password"></td>
+            </tr>
+        </table>
+        <button type="submit">Update Record</button>
+    </form>
+</body>
+
+</html>

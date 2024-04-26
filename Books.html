@@ -1,0 +1,254 @@
+<style>
+    /*Hover to reveal a description of the book */
+
+/* Source code:
+https://github.com/robole/artifice
+*/
+
+.navbar {
+            overflow: hidden;
+            background-color: rgba(128, 0, 128, 0.8);
+            /* Adjust the opacity as needed */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #800080;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&family=Stint+Ultra+Expanded&display=swap');
+
+:root{
+  --perspective: 1000px;
+  --link-color:#010790;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body{
+  font-family: 'Pontano Sans', sans-serif;
+  font-size: calc(0.65em + .05vw);
+  background: url('book.png') no-repeat center center fixed; 
+            /* replace 'path_to_your_image.jpg' with the path to your image */
+            background-size: cover;
+            backdrop-filter: blur(8px); /* Adjust the blur radius as needed */
+            -webkit-backdrop-filter: blur(8px); /* For Safari */
+}
+
+a{
+  color:var(--link-color);
+  font-weight:bold;
+}
+
+h1{
+  font-family: 'Stint Ultra Expanded', cursive;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.book {
+  display: block;
+  position: relative;
+  width: 320px;
+	height:453px;
+  margin:0 auto;
+	margin-top: 5rem;
+}
+
+.gloss{
+  position: absolute;
+  top:0;
+	z-index:200;
+  overflow: hidden;
+  width:20%;
+  height:100%;
+  opacity:0.5;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0));
+  transition:all .5s;
+  transform: translateX(-50%) rotateY(0deg);
+  transform-origin: left center;
+}
+
+.cover {
+	position: absolute;
+  width:100%;
+	z-index:100;
+  transition:transform .5s;
+  transform: translateX(0);
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+
+.description{
+  position: absolute;
+  left:0;
+  top:0;
+  width:inherit;
+  height:inherit;
+	border: solid 1px grey;
+	background:white;
+	transition: all 1s;
+	padding: 10% 10%;
+  padding-top:5%;
+  z-index:1;
+}
+
+.description h1{
+  font-family: 'Pontano Sans', sans-serif;
+	font-size: calc(0.75em + .1vw);
+  text-align: center;
+  line-height: 1.25em;
+}
+
+.book:hover{
+		cursor: pointer;
+}
+
+.book:hover .cover {
+    transform: perspective(var(--perspective)) rotateY(-80deg);
+}
+
+.book:hover .gloss {
+    transform: perspective(var(--perspective)) rotateY(-80deg) translateX(100%) scaleX(5);
+}
+
+.book:hover .description {
+    transform: translateX(20%);
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+  height:2em;
+  margin:0 auto;
+  color:grey;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  font-size: 1.75em;
+  margin-right:.2em;
+}
+
+.rating > span ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color:#8d2a06;
+}
+
+.container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+        }
+
+        .book {
+            /* Your existing book styles here */
+            margin: 40px;
+        }
+
+</style>
+<body>
+    <div class="navbar">
+      <a href="home.html">HOME</a>
+      <a href="order.html">Order</a>
+      <a href="login.html">LOGOUT</a>
+        
+    </div>
+    <div class="container">
+
+<div id="handmaid" class="book">
+    <div class="gloss"></div>
+    <img class="cover" src="littlepri.png">
+    <div class="description">
+      <h1>The Little Prince</h1>
+      <hr>
+      <p>This is one of those books that you absolutely can’t separate from its cover and the watercolor illustrations within. It is a poetic tale that stole everyone’s heart. At first glance, it may seem like a children’s book cover but it’s so much more than that. This book has so many that if you read it every year, you’ll be able to understand it differently, every single time. After reading it the first time, you’ll smile every time you see this cover. 
+        <br><i>Washington Post Book World</i></blockquote>
+    </div>
+  </div>
+  <div id="handmaid" class="book">
+    <div class="gloss"></div>
+    <img class="cover" src="jpark.png">
+    <div class="description">
+      <h1>Jurassic Park </h1>
+      <hr>
+      <p>Author: Michael Crichton
+        Artist: Chip Kidd
+        The first edition book cover of this amazing book is so simple, yet is one of the most beautiful and one of the best book covers you can find out there. It is so iconic that it has become the symbol and logo of the whole Jurassic Park universe.
+        
+        The cover captures the book’s atmosphere and metaphorically brings life back to dinosaurs using nothing but bones.
+        <br><i>Washington Post Book World</i></blockquote>
+    </div>
+  </div>
+  <div id="handmaid" class="book">
+    <div class="gloss"></div>
+    <img class="cover" src="aot.png">
+    <div class="description">
+      <h1>Attack on Titan Manga</h1>
+      <hr>
+      <p>A Japanese manga series written and illustrated by Hajime Isayama, Attack on Titan is set in a world where humanity lives inside cities surrounded by enormous walls that protect them from gigantic man-eating humanoids called Titans.</p>
+    </div>
+  </div>
+  <div id="handmaid" class="book">
+    <div class="gloss"></div>
+    <img class="cover" src="harry,png">
+    <div class="description">
+      <h1>Harry Potter series</h1>
+      <hr>
+      <p>Author: J. K. Rowling 
+        Artist: Mary GrandPré
+        Talking about the best book covers of all times, this iconic fantasy book has been the highlight of our childhood. This artist is responsible for the image of the whole Harry Potter universe and created the iconic Harry Potter logo. Her colorful, vivid illustrations set up the scene for the amazing adventures the readers were going to start.</p>
+      
+    </div>
+  </div>
+  <div id="handmaid" class="book">
+    <div class="gloss"></div>
+    <img class="cover" src="godfa.png">
+    <div class="description">
+      <h1>The Godfather</h1>
+      <hr>
+      <p>Author: Mario Puzo
+        Artist:  S. Neil Fujita
+        This amazing cover also became the poster for the movie franchise. It later went on to become so well known that it’s synonymous with the story itself. 
+        
+        This cover is simple, yet bold and significant. The cover art features a heavy typeface and a puppeteer’s hand which became iconic imagery for the legendary Godfather.</p>
+    </div>
+  </div>
+
+  <div id="handmaid" class="book">
+    <div class="gloss"></div>
+    <img class="cover" src="1984.png">
+    <div class="description">
+      <h1>1984</h1>
+      <hr>
+      <p>Author: George Orwell
+        Artist: Shepard Fairey
+        This Soviet-style of work suited the content of the book perfectly. Moreover, the all-seeing eye gives that essential element of creepiness, that the book is all about.</p>
+    </div>
+  </div>
+  
+  
+  </div>
+  </div>
+  </body>

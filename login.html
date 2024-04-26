@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: url('book.png') no-repeat center center fixed;
+            /* replace 'path_to_your_image.jpg' with the path to your image */
+            background-size: cover;
+            backdrop-filter: blur(8px);
+            /* Adjust the blur radius as needed */
+            -webkit-backdrop-filter: blur(8px);
+            /* For Safari */
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(128, 0, 128, 0.8);
+            /* Adjust the opacity as needed */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #800080;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: 0;
+            background: #008080;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background: #006666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="home.html">HOME</a>
+        <a href="login.html">LOGIN</a>
+        <a href="signup.html">REGISTER</a>
+        <a href="adlog.html">ADMIN</a>
+    </div>
+
+    <div class="container">
+        <div class="login-container">
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Log In">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
