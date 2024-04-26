@@ -8,9 +8,6 @@
   "name": "node4-run",
   "version": "1.0.0",
   "main": "node4.js",
-  "engines": {
-    "node": "20.x"
-  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
