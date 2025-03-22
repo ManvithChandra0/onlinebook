@@ -4,7 +4,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3001;
 
-mongoose.connect('mongodb+srv://manvith:manvith@cluster0.58kzdev.mongodb.net/book', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://vashist:vashist@cluster0.xyt44jz.mongodb.net/book?retryWrites=true&w=majority', { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
